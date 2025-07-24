@@ -11,7 +11,9 @@ st.set_page_config(layout="wide")
 st.title("🎯 대학 전형별 결과 등급 분포 시각화")
 
 # 1. 한글 폰트 설정
-font_path = "KoPub Dotum Bold.ttf"        # 사용자 업로드 폰트 파일 경로[^1]
+BASE_DIR = os.path.dirname(__file__)
+font_path = os.path.join(BASE_DIR, "fonts", "KoPub Dotum Bold.ttf")
+#font_path = "./fonts/KoPub Dotum Bold.ttf"        # 사용자 업로드 폰트 파일 경로[^1]
 fm.fontManager.addfont(font_path)
 font_name = fm.FontProperties(fname=font_path).get_name()
 plt.rcParams['font.family'] = font_name
